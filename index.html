@@ -73,6 +73,34 @@
         <p style="margin: 25px;">|</p>
         <a href="https://wa.me/5531127049">Mándame un Whatsapp</a>
     </div>
+
+    <button id="ChangeCSS">Change de CSS style</button>
+    <script>
+        const boton = document.getElementById('ChangeCSS');
+
+        boton.addEventListener('click', () => {
+            // Intentamos buscar si ya existe el link con un ID específico
+            const linkExistente = document.getElementById('estilo-dinamico');
+
+            if (linkExistente) {
+                // Si existe, lo eliminamos
+                linkExistente.remove();
+                boton.textContent = "Activar Estilo";
+                console.log("CSS eliminado");
+            } else {
+                // Si no existe, lo creamos y le asignamos el ID
+                const link = document.createElement('link');
+                link.id = 'estilo-dinamico'; // ID clave para poder borrarlo luego
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'style.css';
+
+                document.getElementsByTagName('HEAD')[0].appendChild(link);
+                boton.textContent = "Desactivar Estilo";
+                console.log("CSS cargado");
+            }
+        });
+    </script>
     <footer style="display:flex; justify-content: center;">
         Mae. Francisco Cal y Mayor © Copyright
     </footer>
