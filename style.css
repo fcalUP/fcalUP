@@ -1,0 +1,174 @@
+/* Importar tipografía moderna */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #2563eb;
+    /* Azul moderno */
+    --text-dark: #1f2937;
+    /* Gris casi negro */
+    --text-light: #6b7280;
+    /* Gris para párrafos */
+    --bg-color: #f9fafb;
+    /* Blanco roto */
+    --card-bg: #ffffff;
+    --border-color: #e5e7eb;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Contenedor principal para limitar el ancho en pantallas grandes */
+body>* {
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Estilo de la imagen de perfil */
+img {
+    display: block;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    /* Foto circular */
+    border: 4px solid white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    width: 150px !important;
+    /* Sobreescribimos el 10% inline */
+    height: 150px;
+}
+
+/* Encabezados */
+h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--text-dark);
+    letter-spacing: -0.025em;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--primary-color);
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 1.3rem;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 15px;
+    margin-top: 40px;
+    color: var(--text-dark);
+}
+
+/* Texto de descripción */
+div[style*="white-space: pre-line"] {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    color: var(--text-light);
+    font-size: 1.05rem;
+    text-align: justify;
+}
+
+/* Listas */
+ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
+}
+
+ul li {
+    background: var(--card-bg);
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    font-size: 0.95rem;
+    transition: transform 0.2s;
+}
+
+ul li:hover {
+    transform: translateX(5px);
+    border-color: var(--primary-color);
+}
+
+/* Separadores */
+hr {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 40px 0;
+}
+
+/* Enlaces y Botones de contacto */
+a {
+    text-decoration: none;
+    color: white;
+    background-color: var(--primary-color);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+a[href^="mailto"] {
+    background-color: #374151;
+    /* Color oscuro para el correo */
+}
+
+a[href*="wa.me"] {
+    background-color: #25d366;
+    /* Verde WhatsApp */
+}
+
+/* Ajustes de footer */
+footer {
+    margin-top: 60px;
+    padding-bottom: 20px;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    ul {
+        grid-template-columns: 1fr;
+    }
+
+    div[style*="display:flex"] {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    div[style*="display:flex"] p {
+        display: none;
+        /* Ocultamos la barra separadora "|" en móvil */
+    }
+}
